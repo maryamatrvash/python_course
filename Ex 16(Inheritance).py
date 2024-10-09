@@ -22,8 +22,7 @@ class Laptop(Device):
         print("Laptop is opened!") 
 
     def __str__(self):
-        info = super().__str__()
-        return f"{info}, Ram Size: {self.ram_size} GB" 
+        return f"{super().__str__()}, Ram Size: {self.ram_size} GB" 
     
 class Smartphone(Device):
     def __init__(self, brand, model, price, camera):
@@ -33,9 +32,8 @@ class Smartphone(Device):
     def take_photo(self):
         print("A photo has been taken!")
 
-    def __str__(self):
-        info = super().__str__()
-        return f"{info}, Camera Resolution: {self.camera_resolution} MP" 
+    def __str__(self): 
+        return f"{super().__str__()}, Camera Resolution: {self.camera_resolution} MP" 
     
 
 l1 = Laptop("a", "12", 200, 4)
