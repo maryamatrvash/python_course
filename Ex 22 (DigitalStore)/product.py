@@ -6,7 +6,7 @@ class Product:
         self.brand = brand 
 
     def display(self):
-        print(f"ID: {self.id_}, Name: {self.name}, Price: {self.price}, Brand: {self.brand}") 
+        return f"ID: {self.id_}, Name: {self.name}, Price: {self.price}, Brand: {self.brand}"
 
 
 if __name__ == "__main__":
