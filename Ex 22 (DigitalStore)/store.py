@@ -15,10 +15,34 @@ class Store:
         print("Added!") 
 
     def remove_product(self, id_):
+        flag = True 
         for product in self.products.values():
-            if id_ in product:
+            if id_ in product: 
+                flag = False
                 del product[id_]
-                print("removed") 
+                return f"ID: {id_} removed!" 
+        if flag :
+            print("Not Found") 
+
+    @staticmethod
+    def show_info(data, p_type):
+        print(10*" "+ "*" + p_type + "*") 
+        for p in data.values():
+            print(p)
+        if not data:
+            print("Empty") 
+
+    def display(self, product_type=None): 
+        if product_type:
+            try: 
+                products = self.products[product_type] 
+            except:
+                print("Not found!") 
+            else:
+                self.show_info(products, product_type) 
+        else:
+            for k, v in self.products.items():
+                self.show_info(v, k) 
 
 
 if __name__ == "__main__":
@@ -29,7 +53,7 @@ if __name__ == "__main__":
     s1.add_product(l1) 
     s1.add_product(l2) 
     s1.add_product(p1) 
-    print(s1.products) 
-    s1.remove_product("123") 
-    print(s1.products) 
-    
+    #print(s1.products) 
+    #s1.remove_product("123")  
+    #print(s1.products) 
+    s1.display("laptops")   
